@@ -1,0 +1,13 @@
+@tailwind components;
+
+@layer components{
+    .planSection{
+        @apply flex flex-col gap-12;
+    }
+    .planSection.dark{
+        @apply bg-primary rounded-xl lg:rounded-3xl;
+    }
+    .plans{
+        @apply flex flex-col gap-6;
+    }
+}

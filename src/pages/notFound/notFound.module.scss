@@ -1,0 +1,81 @@
+@tailwind components;
+
+@layer components {
+  .notfound {
+    height: 100svh;
+    color: #fff;
+    padding: 4px;
+    @media (min-width: 768px) {
+      padding: 12px;
+    }
+
+    .notfound_container {
+      @apply bg-primary h-full rounded md:rounded-xl;
+
+      .notfound_inner {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        .text {
+          font-size: 150px;
+
+          @media (min-width: 768px) {
+            font-size: 320px;
+
+            &:first-child {
+              margin-right: -30px;
+            }
+            &:last-child {
+              margin-left: -30px;
+            }
+          }
+          &:first-child {
+            margin-right: -16px;
+          }
+          &:last-child {
+            margin-left: -16px;
+          }
+        }
+
+        .image_container {
+          width: 100%;
+          height: 100%;
+          max-width: 150px;
+          max-height: 150px;
+          animation: rotate 8s linear infinite;
+          @media (min-width: 768px) {
+            max-width: 400px;
+            max-height: 400px;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .message {
+          @apply md:leading-8 leading-5 font-helvetica_light;
+          font-size: 20px;
+          max-width: 233px;
+          text-align: center;
+          margin-bottom: 38px;
+          margin-top: 24px;
+          @media (min-width: 768px) {
+            margin-top: 0px;
+            font-size: 24px;
+            max-width: 280px;
+            margin-bottom: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

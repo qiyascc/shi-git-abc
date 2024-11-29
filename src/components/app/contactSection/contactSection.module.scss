@@ -1,0 +1,25 @@
+@tailwind components;
+
+@layer components {
+  ul {
+    li {
+      .contact_link {
+        @apply flex items-center justify-between font-helvetica_light p-6 border-y border-divider_light max-md:p-3 transition-all ease-custom duration-300;
+
+        .arrow {
+          @apply transition-transform duration-300;
+        }
+
+        @media (min-width: 768px) {
+          &:hover {
+            border-color: #828585;
+
+            .arrow {
+              @apply rotate-45;
+            }
+          }
+        }
+      }
+    }
+  }
+}

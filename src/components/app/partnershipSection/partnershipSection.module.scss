@@ -1,0 +1,14 @@
+@tailwind components;
+
+@layer components {
+  .partnershipSection {
+    @apply flex flex-col gap-16;
+  }
+  .row {
+    @apply flex flex-col gap-12;
+  }
+
+  .col {
+    @apply grid gap-6 grid-cols-2 justify-items-center lg:grid-cols-none lg:flex;
+  }
+}

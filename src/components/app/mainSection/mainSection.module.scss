@@ -1,0 +1,35 @@
+.hero_container {
+  height: calc(100svh - 8px);
+  background-image: url("/images/header-image.png");
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  background-position: calc(100% + 377px) -435px;
+  padding: 12px;
+  @media (min-width: 768px) {
+    height: calc(100svh - 24px);
+    background-position: calc(100% + 650px) -750px;
+    padding: 36px;
+    background-size: auto;
+  }
+
+  .hero_subtitle {
+    @apply flex items-start text-white gap-4 font-helvetica_light leading-tight;
+
+    font-size: 18px;
+    @media (min-width: 768px) {
+      font-size: 22px;
+    }
+  }
+
+  .hero_title {
+    padding-top: calc(100svh - 470px);
+    font-size: 112px;
+    font-family: "HelveticaNeue UltraLight", sans-serif;
+
+    @media (min-width: 820px) {
+      padding-top: calc(100svh - 455px);
+      font-size: 160px;
+      font-family: "HelveticaNeue Thin", sans-serif;
+    }
+  }
+}

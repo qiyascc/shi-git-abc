@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components{
+    .getInTouchSection{
+        @apply flex flex-col lg:flex-row gap-6 justify-between !pb-16;
+    }
+}

@@ -1,0 +1,52 @@
+@tailwind components;
+
+.animated_link_inner {
+  @apply flex w-fit items-center gap-1;
+  .animated_link {
+    @apply bg-primary rounded-[4px] p-1;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .link_name {
+    display: block;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #222;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(1);
+      transition: transform 0.55s 0.2s;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #222;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.55s;
+    }
+  }
+  @media (min-width: 768px) {
+    &:hover .link_name::before {
+      transform: scaleX(0);
+      transition: transform 0.55s;
+    }
+    &:hover .link_name::after {
+      transform: scaleX(1);
+      transition: transform 0.55s 0.2s;
+    }
+  }
+}

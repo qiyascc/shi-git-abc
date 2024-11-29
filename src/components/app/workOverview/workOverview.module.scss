@@ -1,0 +1,14 @@
+@tailwind components;
+
+.title {
+  @apply md:text-[72px] text-[32px] text-text-color mb-4;
+}
+
+.content {
+  @apply md:text-2xl text-xl text-gray-60 font-helvetica_light max-w-[660px];
+  line-height: 150%;
+}
+
+.image {
+  @apply w-full object-cover max-h-[672px] min-h-[343px] rounded-3xl;
+}

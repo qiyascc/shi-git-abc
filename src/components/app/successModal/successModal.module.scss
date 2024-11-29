@@ -1,0 +1,40 @@
+@tailwind components;
+
+@layer components {
+  .modal {
+    @apply h-screen grid place-items-center bg-[#00000099] fixed inset-0 z-[1000] px-4;
+  }
+  .modal-inner {
+    @apply rounded-xl bg-white py-12 px-6 lg:p-16  max-w-[720px] w-full flex flex-col items-center gap-7;
+  }
+  .description {
+    @apply text-[24px] leading-normal text-text-color;
+  }
+}
+
+.modal {
+  animation: fadeIn 0.3s linear;
+}
+
+.modal-inner {
+  animation: goUp 0.3s linear;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes goUp {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

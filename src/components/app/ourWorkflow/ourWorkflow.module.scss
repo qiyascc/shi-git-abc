@@ -1,0 +1,99 @@
+@tailwind components;
+
+@layer components {
+  .ourWorkflow {
+    @apply flex flex-col gap-12;
+  }
+  .hoverableColumns {
+    @apply flex flex-col lg:flex-row gap-9 lg:gap-0 -mb-[100px] lg:mb-0;
+  }
+  .hoverableItem {
+    @apply bg-white sticky lg:min-h-[313px] h-[290px] min-[425px]:h-[250px] lg:h-[20vw] w-full lg:w-1/6 pt-6 lg:p-6 overflow-hidden lg:relative flex flex-col font-helvetica_light;
+  }
+  .hoverableItem_line {
+    @apply h-[1px] lg:h-0 w-full lg:w-[1px] absolute top-0 right-0 bg-divider_light;
+  }
+  .hoverableItem_number {
+    @apply mb-auto text-[40px] opacity-0 translate-y-16;
+  }
+  .hoverableItem_titleDescription {
+    @apply w-full relative;
+  }
+  .hoverableItem_description {
+    @apply max-w-[500px] lg:max-w-none lg:absolute lg:bottom-0 left-[215px] lg:w-[15vw] lg:pr-6 text-gray-60 leading-[150%];
+  }
+  .hoverableItem_title {
+    @apply text-[20px] mb-6 lg:mb-0 opacity-0 translate-y-16;
+  }
+}
+
+.hoverableItem {
+  transition: width 0.6s;
+  --item-count: 6;
+
+  // Mobil düzen
+  &:nth-child(1) {
+    top: 50px;
+    margin-bottom: calc((var(--item-count) - 0) * 100px);
+  }
+  &:nth-child(2) {
+    top: 136px;
+    margin-bottom: calc((var(--item-count) - 1) * 100px);
+    &:not(:first-child) {
+      margin-top: calc((var(--item-count) - 1) * -120px);
+    }
+  }
+  &:nth-child(3) {
+    top: 220px;
+    margin-bottom: calc((var(--item-count) - 2) * 100px);
+    &:not(:first-child) {
+      margin-top: calc((var(--item-count) - 2) * -127px);
+    }
+  }
+  &:nth-child(4) {
+    top: 305px;
+    margin-bottom: calc((var(--item-count) - 3) * 100px);
+    &:not(:first-child) {
+      margin-top: calc((var(--item-count) - 3) * -136px);
+    }
+  }
+  &:nth-child(5) {
+    top: 390px;
+    margin-bottom: calc((var(--item-count) - 4) * 100px);
+    &:not(:first-child) {
+      margin-top: calc((var(--item-count) - 4) * -156px);
+    }
+  }
+  &:nth-child(6) {
+    top: 410px;
+    margin-bottom: calc((var(--item-count) - 5) * 100px);
+    &:not(:first-child) {
+      margin-top: calc((var(--item-count) - 5) * -212px);
+    }
+  }
+
+  // Masaüstü düzeni
+  @media (min-width: 1024px) {
+    margin: 0 !important;
+    top: auto !important;
+
+    &:last-of-type .hoverableItem_line {
+      display: none;
+    }
+
+    &:hover {
+      width: 44%;
+    }
+  }
+}
+
+.hoverableItem_line {
+  transform-origin: left center;
+  @media (min-width: 1024px) {
+    transform-origin: center bottom;
+  }
+}
+
+.hoverableItem_description {
+  transition: opacity 0.6s;
+}

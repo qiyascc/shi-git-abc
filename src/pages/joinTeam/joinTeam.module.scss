@@ -1,0 +1,105 @@
+@tailwind components;
+
+.label_file {
+  @apply flex items-center justify-between cursor-pointer w-full;
+}
+.file_input {
+  appearance: none;
+  display: none;
+}
+
+.file_loader {
+  background-color: #cccfcf1f;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  max-width: 447px;
+  margin-top: 8px;
+  gap: 10px;
+  @media (min-width: 576px) {
+    gap: 48px;
+  }
+  .file_icon {
+    padding: 4px;
+    background-color: #ffcfac66;
+    border: 4px solid #ffe2cd66;
+    border-radius: 50%;
+    @media (min-width: 576px) {
+      padding: 8px;
+    }
+    img {
+      width: 10px;
+      height: 10px;
+      @media (min-width: 576px) {
+        width: 16px;
+      height: 16px;
+      }
+    }
+  }
+
+  .file_info {
+    width: 200px;
+    @media (min-width: 576px) {
+      width: 295px;
+    }
+    .file_name {
+      @apply font-helvetica_medium;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .file_size {
+      color: #666666;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .progress_bg {
+      margin-top: 4px;
+      padding: 6px 0;
+      .progress_inner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .progress {
+          width: calc(100% - 49px);
+          background-color: #cccfcf;
+          height: 8px;
+          border-radius: 4px;
+          overflow: hidden;
+          .progress_active {
+            background-color: #ff6e06;
+            width: 0%;
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.1s ease;
+          }
+
+          .progress_active_success {
+            background-color: #00842a;
+          }
+        }
+
+        .progress_percent {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .file_close {
+    padding: 4px;
+    border: 1px solid #cccfcf;
+    border-radius: 50%;
+    @media (min-width: 768px) {
+      padding: 8px;
+    }
+    img {
+      @media (max-width: 576px) {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}

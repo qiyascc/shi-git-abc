@@ -1,0 +1,206 @@
+@import "./partials/mixin.scss";
+@import "./partials/fonts.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    @apply font-helvetica_regular leading-none;
+    &::-webkit-scrollbar-thumb {
+      background-color: #ff6e06;
+      border-radius: 10px;
+      border: 2px solid #353232;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #ff4757;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #3a3939;
+    }
+  }
+
+  section {
+    @apply my-16 lg:my-32;
+  }
+
+  .wrapper {
+    @apply px-3 md:px-9;
+  }
+
+  .shi-container {
+    @apply py-8 lg:py-16;
+  }
+
+  .header {
+    @apply text-[32px] md:text-5xl lg:text-6xl xl:text-7xl  leading-none text-text-color;
+  }
+
+  .loader {
+    @apply flex h-40 items-center justify-center gap-3 text-primary;
+  }
+
+  .loader-container {
+    min-height: calc(100svh - 300px);
+  }
+
+  .main_title {
+    @apply flex items-start sm:items-end justify-between flex-col gap-6 sm:flex-row;
+  }
+
+  input[type="checkbox"] {
+    @apply border border-divider_light bg-white;
+    appearance: none;
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    &:checked {
+      @apply bg-primary;
+      background-image: url("/images/check.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20px;
+    }
+  }
+
+  input:focus,
+  select:focus,
+  button:focus,
+  textarea:focus {
+    outline: none;
+  }
+
+  .img_container {
+    position: relative;
+    margin-bottom: -40px;
+    height: 100%;
+    @media (max-width: 768px) and (max-height: 720px) {
+      margin-bottom: -20px;
+    }
+    @media (max-width: 576px) and (min-height: 720px) {
+      margin-bottom: -10px;
+    }
+    .s-on,
+    .h-on,
+    .i-on {
+      position: absolute;
+      opacity: 0;
+      top: 0;
+    }
+
+    .s-off,
+    .h-off,
+    .i-off {
+      opacity: 1;
+      position: relative;
+      top: 0;
+    }
+
+    .s-on {
+      opacity: 1;
+    }
+  }
+
+  .s-off,
+  .s-on {
+    z-index: 30;
+  }
+
+  .h-off,
+  .h-on {
+    z-index: 20;
+  }
+
+  .i-off,
+  .i-on {
+    z-index: 10;
+  }
+
+  .content_container {
+    position: absolute;
+    .content_title_s1,
+    .content_title_h1,
+    .content_title_i1 {
+      position: relative;
+      opacity: 0;
+      bottom: -28px;
+      color: #222;
+    }
+
+    .content_text_s1,
+    .content_text_h1,
+    .content_text_i1 {
+      position: relative;
+      opacity: 0;
+      bottom: -28px;
+    }
+
+    .content_title_s1,
+    .content_text_s1 {
+      opacity: 1;
+      bottom: 0px;
+    }
+  }
+
+  .one_leader,
+  .two_leader,
+  .three_leader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 100%;
+  }
+
+  .one_leader {
+    width: 210%;
+    height: 121%;
+  }
+
+  .two_leader {
+    width: 100%;
+    height: 200%;
+  }
+
+  .three_leader {
+    width: 210%;
+    height: 100%;
+  }
+  .animation-container {
+    @apply relative inline-block align-top overflow-hidden mr-[3px] last-of-type:mr-0;
+  }
+  .animation-element {
+    @apply relative translate-y-full inline-block leading-tight;
+  }
+  .title {
+    @apply mr-10;
+  }
+  .divider {
+    @apply p-3 max-md:p-1;
+  }
+  .load_animation {
+    @apply flex w-fit mx-auto items-end border-b py-1;
+    @media (min-width: 768px) {
+      &.down:hover svg {
+        transform: translateY(4px);
+      }
+      &.up:hover svg {
+        transform: translateY(-4px);
+      }
+    }
+    svg {
+      transition: transform 0.2s linear;
+    }
+  }
+}

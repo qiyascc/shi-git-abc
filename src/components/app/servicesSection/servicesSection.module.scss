@@ -1,0 +1,16 @@
+@tailwind components;
+
+@layer components {
+  .servicesSection {
+    @apply rounded-3xl bg-primary flex flex-col gap-12 px-3 py-8 lg:px-9 lg:py-12 my-8 lg:my-16;
+  }
+  .servicesSection.light {
+    @apply bg-white my-0 lg:my-3;
+  }
+  .header {
+    @apply text-[32px] md:text-5xl lg:text-6xl xl:text-7xl  leading-none text-white;
+  }
+  .services {
+    @apply -my-10 lg:-my-2;
+  }
+}

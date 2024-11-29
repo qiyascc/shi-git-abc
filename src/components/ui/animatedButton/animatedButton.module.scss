@@ -1,0 +1,70 @@
+@tailwind components;
+
+@layer components {
+  .animatedButton {
+    @apply relative overflow-hidden rounded border md:mb-4 w-fit block shrink-0;
+  }
+  .animatedButton span {
+    @apply transition-all duration-700 ease-custom;
+  }
+}
+
+.animatedButton {
+  @media (min-width: 768px) {
+    &:hover {
+      .one,
+      .two,
+      .three {
+        transform: scale(1.5) translate(0, 0);
+      }
+
+      button {
+        color: white;
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+  &.dark {
+    color: white;
+    @media (min-width: 768px) {
+      &:hover {
+        button {
+          color: #001011;
+        }
+      }
+    }
+  }
+}
+.animatedButton {
+  span {
+    transform: scale(0);
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    background-color: #001011;
+    border-radius: 100%;
+    display: block;
+  }
+  &.dark span {
+    background-color: white;
+  }
+  &.animate {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.animatedButton .one {
+  bottom: 0;
+  left: -40%;
+  transform: scale(0) translateX(-50%);
+}
+.animatedButton .two {
+  bottom: 0;
+  left: 40%;
+  transform: scale(0) translateX(50%);
+}
+.animatedButton .three {
+  top: 50%;
+}

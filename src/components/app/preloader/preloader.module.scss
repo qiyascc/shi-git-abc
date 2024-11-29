@@ -1,0 +1,102 @@
+@tailwind components;
+
+@layer components {
+  .preloader {
+    @apply font-helvetica_thin;
+    height: 100svh;
+    width: 100%;
+    overflow: hidden;
+    padding: 4px;
+
+    @media (min-width: 768px) {
+      padding: 12px;
+    }
+
+    .preloader_container {
+      @apply h-full rounded-xl;
+
+      .preloader_inner {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+
+        .animation_container {
+          margin-left: 30px;
+          @media (min-width: 1200px) {
+            margin-left: 80px;
+          }
+
+          .animation_inner {
+            overflow: hidden;
+            @media (min-width: 767px) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 100px;
+              gap: 32px;
+            }
+
+            .animation_part {
+              opacity: 0;
+              transform: translateY(100px);
+              transition: opacity 0.4s, transform 0.4s;
+              display: flex;
+              align-items: last baseline;
+              gap: 7px;
+
+              @media (max-width: 768px) {
+                margin-bottom: 10px;
+              }
+              .animation_text {
+                font-size: 50px;
+
+                @media (max-width: 767px) {
+                  font-size: 60px;
+                }
+
+                @media (min-width: 1200px) {
+                  font-size: 72px;
+                }
+              }
+              .animation_point {
+                background-color: #ff6e06;
+                border-radius: 50%;
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+
+                @media (min-width: 767px) and (max-width: 1200px) {
+                  width: 10px;
+                  height: 10px;
+                }
+              }
+            }
+
+            // .animation_first_part {
+            //   opacity: 0;
+            //   transform: translateY(100px);
+            //   margin-right: 30px;
+            //   font-size: 72px;
+            // }
+
+            // .animation_last_part {
+            //   opacity: 0;
+            //   transform: translateY(100px);
+            //   font-size: 72px;
+            // }
+          }
+        }
+
+        .loading_percent {
+          @apply rounded-[50px] py-3 px-6 absolute md:bottom-[36px] right-[36px] bottom-[60px];
+          z-index: 9999;
+          .percent_info {
+            @apply font-helvetica_thin;
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+}

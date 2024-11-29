@@ -1,0 +1,29 @@
+@tailwind components;
+
+@layer components {
+  .team_cards {
+    @apply grid gap-6 mt-12;
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .social_media_links {
+      @apply inline-block rounded-full bg-transparent border border-primary border-opacity-[.12] p-3;
+
+      transition: all 0.2s linear;
+      @media (min-width: 768px) {
+        &:hover {
+          border-color: #cccfcf;
+        }
+      }
+    }
+  }
+}

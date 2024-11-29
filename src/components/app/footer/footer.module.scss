@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.social_media_container {
+  padding-bottom: 64px;
+  @media (min-width: 992px) {
+    padding-bottom: 200px;
+  }
+  .social_media_link {
+    @apply inline-block rounded-full bg-transparent border border-white border-opacity-20 p-3 md:hover:border-[#cccfcf];
+    transition: all 0.2s linear;
+    svg {
+      width: 16px;
+      height: 16px;
+      @media (min-width: 768px) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}
+
+.footer_nav_title {
+  @apply font-helvetica_regular text-2xl mb-5 leading-none font-normal;
+}
+
+.footer_nav_link {
+  @apply font-helvetica_light text-gray text-xl leading-none md:hover:text-white transition-colors duration-300;
+}

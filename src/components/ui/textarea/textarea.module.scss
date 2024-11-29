@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  .label {
+    @apply absolute flex items-center transition-all duration-300 ease-custom h-6 top-3  text-text-color focus:text-[14px] focus:-top-[22px] focus:text-gray-60;
+  }
+
+  .label.active {
+    @apply text-[14px] -top-[22px] text-gray-60;
+  }
+
+  .input {
+    @apply border-b border-b-divider_light py-3 leading-6 w-full;
+  }
+
+  .input:focus ~ .label {
+    @apply text-[14px] -top-[22px] text-gray-60;
+  }
+}
